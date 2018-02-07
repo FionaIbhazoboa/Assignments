@@ -8,17 +8,24 @@ public class Recursion
 		//TODO Auto-generated method stub
 		@SuppressWarnings("resource")
 		Scanner reader = new Scanner (System.in);
+		//Initialize variables 
 		String input;
 		int n;
+		//Welcomes user
 		System.out.println("Hello User!");
-		System.out.println("\nThis program will output the nth number from the fibonacci series.");
+		//Explains program to the user
+		System.out.println("\nThis program will output the nth number from the Fibonacci series.");
 		System.out.println("\nAnd also the series of numbers leading up to the nth.");
+		//lets the program run once before asking the user if they want to perform the action again
 		do
 		{
+		//ask the user for the nth fibonacci series 
 		System.out.println("\nHow many numbers in the series would you like to print out: ");
 		n = reader.nextInt();
-		System.out.println( n + " numbers in the fibonacci series using recursion are: ");
+		System.out.println( n + " numbers in the Fibonacci series using recursion are: ");
+		//record how long it took the recursion function to run
 		long startTime = System.nanoTime();
+		//to print out the series of numbers
 		for(int i=0; i<n; i++)
 		{
             System.out.print(fiboSeriesRec(i) +" ");
@@ -27,7 +34,9 @@ public class Recursion
 		System.out.println("\nTime taken to calculate Fibonacci number with recursion: " + elapsedTime +"ns"); 
 		System.out.println('\n');
 		System.out.println( n + " numbers in the fibonacci series using iteration are: ");
+		//record how long it took the iterative function to run
 		startTime = System.nanoTime();
+		//to print out the series of numbers
 		for(int j=0; j<n; j++)
 		{
 			System.out.print(fiboSeriesIte(j) +" ");
@@ -39,6 +48,7 @@ public class Recursion
 		}while (input.compareTo("Y") == 0 || input.compareTo("y") == 0);
 		System.exit(0);
 	}
+	//function to calculate the fibonacci series using tail recursion
 	public static int fiboSeriesRec(int n)
 	{
 		while (n > 0)
@@ -51,6 +61,7 @@ public class Recursion
 		}
 			 return 0;
 	}
+	//function to calculate the fibonacci series using iteration
 	public static int fiboSeriesIte(int n)
 	{
 		if(n == 0 || n == 1)
